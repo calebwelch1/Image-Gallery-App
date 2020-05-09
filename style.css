@@ -1,11 +1,9 @@
 img {
   border-radius: 20px;
   overflow: hidden;
-  display: flex;
-  justify-content: auto;
-  object-fit: cover;
+  object-fit: ;
 }
-/* Silva pinterest layout css silvawebdesigns.com */
+/* Main grid frame from Silva pinterest layout css silvawebdesigns.com */
 #list {
   width: auto;
   overflow: hidden;
