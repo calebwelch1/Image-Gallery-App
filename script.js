@@ -1,3 +1,15 @@
+$(document ).ready(function(){
+    $(".dropdown-trigger").dropdown();
+
+
+})
+
+
+
+
+
+
+
 // //PseudoCode
 // FEATURES:
 // 1 Main page with several photos.
