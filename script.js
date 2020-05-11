@@ -1,14 +1,14 @@
-$(document ).ready(function(){
-    $(".dropdown-trigger").dropdown();
+$(document).ready(function () {
+  $(".dropdown-trigger").dropdown();
+});
 
+$("img").on("click", (e) => {});
 
-})
-
-
-
-
-
-
+// making grid dynamic
+randomHeight = Math.round(Math.random() * (20 - 8) + 8);
+newItem = $("<div>", { class: "item", height: `${randomHeight}` });
+newImage = undefined; // iterate over response images
+$("#list").append(newItem.append(newImage));
 
 // //PseudoCode
 // FEATURES:
