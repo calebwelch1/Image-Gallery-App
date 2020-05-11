@@ -1,26 +1,28 @@
 img {
   border-radius: 20px;
   overflow: hidden;
-  object-fit: ;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 /* Main grid frame from Silva pinterest layout css silvawebdesigns.com */
 #list {
   width: auto;
   overflow: hidden;
   margin-bottom: -1.875em;
-  -webkit-column-count: 3;
+  -webkit-column-count: 4;
   -webkit-column-gap: 1.875em;
   -webkit-column-fill: auto;
-  -moz-column-count: 3;
+  -moz-column-count: 4;
   -moz-column-gap: 1.875em;
   -moz-column-fill: auto;
-  column-count: 3;
+  column-count: 4;
   column-gap: 1.875em;
   column-fill: auto;
 }
 
 .item {
-  background-color: #169fe6;
+  background-color: #ff5533;
   margin-bottom: 1.875em;
   -webkit-column-break-inside: avoid;
   -moz-column-break-inside: avoid;
