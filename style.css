@@ -30,3 +30,8 @@ img {
   overflow: hidden;
   border-radius: 20px;
 }
+
+.image {
+  width: 600px;
+  height: 300px;
+}
