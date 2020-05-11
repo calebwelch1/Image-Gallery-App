@@ -11,13 +11,13 @@ img {
   overflow: hidden;
   margin-bottom: -1.875em;
   -webkit-column-count: 4;
-  -webkit-column-gap: 1.875em;
+  -webkit-column-gap: 1.8em;
   -webkit-column-fill: auto;
   -moz-column-count: 4;
-  -moz-column-gap: 1.875em;
+  -moz-column-gap: 1.8em;
   -moz-column-fill: auto;
   column-count: 4;
-  column-gap: 1.875em;
+  column-gap: 1.8em;
   column-fill: auto;
 }
 
@@ -34,4 +34,38 @@ img {
 .image {
   width: 600px;
   height: 300px;
+}
+
+.container {
+  position: relative;
+  /* size of each image on grid */
+  width: 100%;
+}
+
+.overlay {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #008cba;
+}
+
+#modal:hover .overlay {
+  opacity: 50%;
+}
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
