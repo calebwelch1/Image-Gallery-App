@@ -37,3 +37,21 @@ img {
   -moz-column-break-inside: avoid;
   column-break-inside: avoid;
 }
+
+.nav-wrapper {
+  background-color: black;
+}
+
+a.brand-logo {
+  font-size: 4.0rem;
+  font-family: 'Megrim', cursive;
+  font-weight: bold;
+}
+
+input {
+  color: white;
+}
+
+i.large.material-icons {
+  font-size: 3.0rem;
+}
