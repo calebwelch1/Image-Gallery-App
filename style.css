@@ -31,6 +31,25 @@ img {
   border-radius: 20px;
 }
 
+
+.nav-wrapper {
+  background-color: black;
+}
+
+a.brand-logo {
+  font-size: 4rem;
+  font-family: "Megrim", cursive;
+  font-weight: bold;
+}
+
+input {
+  color: white;
+  align-items: right;
+}
+
+i.large.material-icons {
+  font-size: 3rem;
+
 .image {
   width: 600px;
   height: 300px;
