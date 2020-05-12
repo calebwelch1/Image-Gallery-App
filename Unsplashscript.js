@@ -39,6 +39,7 @@ function searchPhotos() {
           src: image2,
           alt: "image2Icon",
           width: "350px",
+          height: "250px",
         })
       );
 
