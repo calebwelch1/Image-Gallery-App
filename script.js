@@ -1,15 +1,30 @@
 $(document).ready(function () {
   $(".dropdown-trigger").dropdown();
 });
-
+// modal open...
 $("img").on("click", (e) => {});
 
 // making grid dynamic
-randomHeight = Math.round(Math.random() * (20 - 8) + 8);
-newItem = $("<div>", { class: "item", height: `${randomHeight}` });
-newImage = undefined; // iterate over response images
-$("#list").append(newItem.append(newImage));
+// iterate over response images
+// $("#list").append(newItem.append(newImage));
 
+//search button...
+$("#searchButton").on("click", (e) => {
+  e.preventDefault();
+  let search = $("#search").val();
+  var apiKey = "HW9N_DcouND3LdAQFb-NUM_s-4BDQtFZ4R7_JANDOaM";
+  var url = `https://api.unsplash.com/search/photos/?page=5&client_id=${apiKey}&query=${search}`;
+  // only gives 10 responses so can only run 10 times then we have to run this entire code again for another 10
+  for (let i = 0; i < 10; i++) {
+    $.get(url).then((response) => {
+      // make new image at [i], make new div. append image to div. append div to list
+      randomHeight = Math.round(Math.random() * (20 - 8) + 8);
+      newItem = $("<div>", { class: "item", height: `${randomHeight}em` });
+      newImage = $("<img>", { src: response.results[i].urls.regular });
+      $("#list").append(newItem.append(newImage));
+    });
+  }
+});
 // //PseudoCode
 // FEATURES:
 // 1 Main page with several photos.
@@ -42,4 +57,3 @@ $("#list").append(newItem.append(newImage));
 // 7. Sort
 // 8. Upload!
 // 5. Share
-// 3 User album
