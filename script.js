@@ -10,7 +10,7 @@ $("img").on("click", (e) => {});
 
 // loads on ready
 function clearPhotoGrid() {
-  $("#list").clear();
+  $("#list").html("");
 }
 
 $(document).ready(() => {
@@ -29,7 +29,6 @@ $(document).ready(() => {
       });
     }
   }
-  clearPhotoGrid();
   makePopularGrid();
   //find a way to get more than 10 responses
 });
@@ -50,7 +49,9 @@ $("#searchButton").on("click", (e) => {
     });
   }
 });
+//search giphs
 $("#searchButton").on("click", (e) => {
+  clearPhotoGrid();
   let giphSearch = $("#search").val();
   var api_key = "s02hiQd6APdDVB10fdIxKJXAYvwQQ233";
   var queryURL = `https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${giphSearch}&limit=10`;
@@ -64,6 +65,7 @@ $("#searchButton").on("click", (e) => {
       });
     }
   }
+
   makeGiphyGrid();
 });
 // Adding Giphy to the photoGrid
