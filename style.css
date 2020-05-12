@@ -1,22 +1,13 @@
-.row > div {
-  padding: 2px;
-  background: #ddd;
-  border: 1px solid #fff;
-  line-height: 10px;
-  gap: 5px;
-  border-radius: 10px;
-}
-.row {
-  margin: 40px auto;
-  gap: 5px;
-}
 img {
   border-radius: 20px;
   overflow: hidden;
+  display: flex;
+  justify-content: auto;
+  object-fit: cover;
 }
 /* Silva pinterest layout css silvawebdesigns.com */
 #list {
-  width: 100%;
+  width: auto;
   overflow: hidden;
   margin-bottom: -1.875em;
   -webkit-column-count: 3;
@@ -36,6 +27,8 @@ img {
   -webkit-column-break-inside: avoid;
   -moz-column-break-inside: avoid;
   column-break-inside: avoid;
+  overflow: hidden;
+  border-radius: 20px;
 }
 
 .nav-wrapper {
@@ -43,15 +36,16 @@ img {
 }
 
 a.brand-logo {
-  font-size: 4.0rem;
-  font-family: 'Megrim', cursive;
+  font-size: 4rem;
+  font-family: "Megrim", cursive;
   font-weight: bold;
 }
 
 input {
   color: white;
+  align-items: right;
 }
 
 i.large.material-icons {
-  font-size: 3.0rem;
+  font-size: 3rem;
 }
