@@ -46,6 +46,25 @@ $("#searchButton").on("click", (e) => {
     });
   }
 });
+// Adding Giphy to the photoGrid
+$(document).ready(() => {
+  let giphSearch = "popular";
+  var api_key = "s02hiQd6APdDVB10fdIxKJXAYvwQQ233";
+  var queryURL = `https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${giphSearch}&limit=10`;
+  function makeGiphyGrid() {
+    for (let i = 0; i < 10; i++) {
+      $.get(queryURL).then((response) => {
+        randomHeight = Math.round(Math.random() * (20 - 8) + 8);
+        newItem = $("<div>", { class: "item", height: `${randomHeight}em` });
+        newGiph = $("<img>", { src: response.data[i].images.original.url });
+        $("#list").append(newItem.append(newGiph));
+      });
+    }
+  }
+  makeGiphyGrid();
+});
+// now to make the same thing but for giphy!
+
 // //PseudoCode
 // FEATURES:
 // 1 Main page with several photos.
