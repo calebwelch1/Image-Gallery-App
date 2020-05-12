@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Import Google Icon Font-->
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <!--Google Fonts Link-->
     <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
 
     <!--Link to project CSS-->
     <link rel="stylesheet" href="style.css">
+
 
     <title>GSSC</title>
   </head>
@@ -31,10 +39,12 @@
       <div class="nav-wrapper">
         <a href="index.html" class="brand-logo center" style="padding-left: 20px;"><i class="large material-icons">camera_roll</i>GSSC Gallery</a>
 
+
         <ul class="right hide-on-med-and-down">
+          <input type="button" value="search" id="searchButton" />
           <li><a href="index.html">Home</a></li>
           <li class="searchLabel">
-            <input type="text" placeholder="Search" />
+            <input type="text" placeholder="Search" id="search" />
           </li>
 
           <!-- Dropdown Trigger -->
@@ -50,68 +60,10 @@
 
     <!-- Images Dump -->
     <div id="images">
-      <!-- <div class="container"> -->
-      <!-- Let's make all of them 3 rows wide so we get four in a row class="col s3" for small screens-->
-      <!-- On small will take up 12, medium 4, large 3 columns -->
-      <!-- <div class="row">
-          
-          <div class="col s12 m4 l3"><img src="https://placekitten.com/350/500"></div>
-          <div class="col s12 m4 l3"><img src="https://placekitten.com/350/500"></div>
-          <div class="col s12 m4 l3"><img src="https://placekitten.com/350/500"></div>
-          <div class="col s12 m4 l3"><img src="https://placekitten.com/350/500"></div>
-
-        </div>
-        <div class="row">
-          
-          <div class="col s12 m4 l3 item"><img src="https://placekitten.com/350/500"></div>
-          <div class="col s12 m4 l3 item"><img src="https://placekitten.com/350/500"></div>
-          <div class="col s12 m4 l3 item"><img src="https://placekitten.com/350/500"></div>
-          <div class="col s12 m4 l3 item"><img src="https://placekitten.com/350/500"></div>
-
-        </div>
-        <div class="row">
-          
-          <div class="col s12 m4 l3"><img src="https://placekitten.com/350/500"></div>
-          <div class="col s12 m4 l3"><img src="https://placekitten.com/350/500"></div>
-          <div class="col s12 m4 l3"><img src="https://placekitten.com/350/500"></div>
-          <div class="col s12 m4 l3"><img src="https://placekitten.com/350/500"></div>
-
-        </div>
-      </div>  -->
       <div class="container">
-        <div id="list" class="section">
-          <div class="col s12 m4 l3 item" style="height: 14em;">
-            <img src="https://placekitten.com/350/500" />
-          </div>
-          <div class="col s12 m4 l3 item" style="height: 26em;">
-            <img src="https://placekitten.com/350/100" />
-          </div>
-          <div class="col s12 m4 l3 item" style="height: 8em;">
-            <img src="https://placekitten.com/350/200" />
-          </div>
-          <div class="col s12 m4 l3 item" style="height: 14em;">
-            <img src="https://placekitten.com/350/300" />
-          </div>
-          <div class="col s12 m4 l3 item" style="height: 8em;">
-            <img src="https://placekitten.com/350/200" />
-          </div>
-          <div class="col s12 m4 l3 item" style="height: 18em;"></div>
-          <div class="col s12 m4 l3 item" style="height: 16em;"></div>
-          <div class="col s12 m4 l3 item" style="height: 12em;"></div>
-        </div>
+        <div id="list" class="section"></div>
       </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
