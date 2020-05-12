@@ -46,7 +46,11 @@
         // ------YOUR CODE GOES IN THESE DASHES. DO NOT MANUALLY EDIT THE HTML ABOVE.
 
         $.get(queryURL).then(function (response) {
-          $("#giph-view").text(JSON.stringify(response));
+          $("#giph-view").text(response.data[0].images.original.mp4);
+          console.log(response);
+          var imgUrl = response.data[0].images.original.url;
+          var imgEl = $("<img>", { src: imgUrl });
+          $("#giph-view").append(imgEl);
         });
 
         // -----------------------------------------------------------------------
