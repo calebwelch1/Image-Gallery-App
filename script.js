@@ -38,7 +38,7 @@ $(document).ready(() => {
 $(document).ready(() => {
   let giphSearch = "popular";
   var api_key = "s02hiQd6APdDVB10fdIxKJXAYvwQQ233";
-  var queryURL = `https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${giphSearch}&limit=10`;
+  var queryURL = `https://api.giphy.com/v1/gifs/trending?api_key=${api_key}&limit=10`;
   function makeGiphyGrid() {
     for (let i = 0; i < 10; i++) {
       $.get(queryURL).then((response) => {
