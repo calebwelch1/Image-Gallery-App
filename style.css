@@ -91,3 +91,20 @@ i.large.material-icons {
 body {
   background-color: black;
 }
+
+a.dropdown-trigger {
+  color: black;
+  font-family: "Megrim", cursive;
+}
+
+.search-mobile {
+  width: 70%;
+}
+
+.sidenav {
+  background-color: black;
+}
+
+i.left {
+  margin-right: 5px;
+}
