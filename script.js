@@ -1,11 +1,11 @@
-$(document).ready(function () {
-  $(".dropdown-trigger").dropdown();
- 
-  $('.sidenav').sidenav();
+//$(document).ready(function () {});
 
-});
-// modal open...
-$("img").on("click", (e) => {});
+// Dynamic Imaged in modal ...
+function clickimage() {
+  var imageDivThatwasclicked = $(this);
+  var imageurl = imageDivThatwasclicked.children("div img").attr("src");
+  $("#modal1 img").attr("src", imageurl);
+}
 
 // making grid dynamic
 // iterate over response images
@@ -17,6 +17,13 @@ function clearPhotoGrid() {
 }
 //unsplash onREADY
 $(document).ready(() => {
+  // Dropdown , SideNavBar, Modal Pop-Up
+  $(".dropdown-trigger").dropdown();
+  $(".sidenav").sidenav();
+
+  $(document).on("click", ".item", clickimage);
+  $(".modal").modal();
+
   let search = "popular";
   var apiKey = "HW9N_DcouND3LdAQFb-NUM_s-4BDQtFZ4R7_JANDOaM";
   randomPage = Math.round(Math.random() * 27);
@@ -28,7 +35,11 @@ $(document).ready(() => {
         // make new image at [i], make new div. append image to div. append div to list
 
         randomHeight = Math.round(Math.random() * (20 - 8) + 8);
-        newItem = $("<div>", { class: "item", height: `${randomHeight}em` });
+        newItem = $("<div>", {
+          class: "item modal-trigger",
+          height: `${randomHeight}em`,
+          "data-target": "modal1",
+        });
         newImage = $("<img>", { src: response.results[i].urls.regular });
         $("#list").append(newItem.append(newImage));
       });
@@ -45,9 +56,13 @@ $(document).ready(() => {
   function makeGiphyGrid() {
     for (let i = 0; i < 10; i++) {
       $.get(queryURL).then((response) => {
-        console.log(response);
+        //console.log(response);
         randomHeight = Math.round(Math.random() * (20 - 8) + 8);
-        newItem = $("<div>", { class: "item", height: `${randomHeight}em` });
+        newItem = $("<div>", {
+          class: "item modal-trigger",
+          height: `${randomHeight}em`,
+          "data-target": "modal1",
+        });
         newGiph = $("<img>", { src: response.data[i].images.original.url });
         $("#list").append(newItem.append(newGiph));
       });
@@ -67,7 +82,11 @@ $("#searchButton").on("click", (e) => {
     $.get(url).then((response) => {
       // make new image at [i], make new div. append image to div. append div to list
       randomHeight = Math.round(Math.random() * (20 - 8) + 8);
-      newItem = $("<div>", { class: "item", height: `${randomHeight}em` });
+      newItem = $("<div>", {
+        class: "item modal-trigger",
+        height: `${randomHeight}em`,
+        "data-target": "modal1",
+      });
       newImage = $("<img>", { src: response.results[i].urls.regular });
       $("#list").append(newItem.append(newImage));
     });
@@ -83,8 +102,14 @@ $("#searchButton").on("click", (e) => {
     for (let i = 0; i < 10; i++) {
       $.get(queryURL).then((response) => {
         randomHeight = Math.round(Math.random() * (20 - 8) + 8);
-        newItem = $("<div>", { class: "item", height: `${randomHeight}em` });
-        newGiph = $("<img>", { src: response.data[i].images.original.url });
+        newItem = $("<div>", {
+          class: "item modal-trigger",
+          height: `${randomHeight}em`,
+          "data-target": "modal1",
+        });
+        newGiph = $("<img>", {
+          src: response.data[i].images.original.url,
+        });
         $("#list").append(newItem.append(newGiph));
       });
     }
