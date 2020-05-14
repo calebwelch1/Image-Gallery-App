@@ -1,9 +1,12 @@
 $(document).ready(function () {
   $(".dropdown-trigger").dropdown();
- 
-  $('.sidenav').sidenav();
 
+  $('.sidenav').sidenav();
 });
+
+
+
+
 // modal open...
 $("img").on("click", (e) => {});
 
