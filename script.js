@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
   $(".dropdown-trigger").dropdown();
 
@@ -10,10 +11,21 @@ $("img").on("click", (e) => {});
 //$(document).ready(function () {});
 
 // Dynamic Imaged in modal ...
+
 function clickimage() {
+  //append to the span tag
   var imageDivThatwasclicked = $(this);
   var imageurl = imageDivThatwasclicked.children("div img").attr("src");
+
+  console.log(imageurl);
+
+  var count = localStorage.getItem(imageurl);
+
+  console.log(count);
+  $("#like-button").append($(".modal-content .likespan").text(count));
+
   $("#modal1 img").attr("src", imageurl);
+  $("#modal1 img").attr("id", imageurl);
 }
 
 // making grid dynamic
@@ -128,6 +140,7 @@ $("#searchButton").on("click", (e) => {
 
   makeGiphyGrid();
 });
+
 
 // genres
 // animals
@@ -268,6 +281,33 @@ $("#art").on("click", (e) => {
 
   makeGiphyGrid();
 });
+
+// like button gives a display of likes for the particular image
+$("#like-button").on("click", function (event) {
+  event.preventDefault();
+
+  console.log("like", $(this));
+  var name = $(this).siblings("img").attr("src");
+
+  // get the item from local storage
+  var value = localStorage.getItem(name);
+  if (value) {
+    // turn the value into a number
+    value = parseInt(value);
+  } else {
+    value = 0;
+  }
+
+  value++;
+  // check to make sure that the item from local storage exists
+
+  // increment the number by one
+  localStorage.setItem(name, value);
+  $(".modal-content .likespan").text(value);
+  // localStorage.setItem(name, value)
+});
+
+
 // now to make the same thing but for giphy!
 
 // //PseudoCode

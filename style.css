@@ -38,7 +38,6 @@ img {
   border-radius: 20px;
 }
 
-
 .nav-wrapper {
   background-color: black;
 }
@@ -58,10 +57,12 @@ i.large.material-icons {
   font-size: 3rem;
 }
 
+
 /* .image {
   width: 600px;
   height: 300px;
 } */
+
 
 .container {
   position: relative;
@@ -78,7 +79,7 @@ input#search {
 input#search-mobile {
   font-family: "Megrim", cursive;
   font-weight: bold;
-e
+
 }
 
 .overlay {
@@ -127,6 +128,27 @@ i.left {
   margin-right: 5px;
 }
 
+
+#like-button {
+  background-color: blueviolet;
+  box-shadow: 0 1px 0 darkmagenta;
+  color: white;
+  padding: 0.5em 1.5em;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#like-button:hover {
+  background-color: brown;
+  cursor: pointer;
+}
+
+#like-button:active {
+  box-shadow: none;
+  top: 5px;
+}
+
 @media screen and (max-width: 818px) {
   a#brandLogo {
     font-size: 35px;
@@ -138,4 +160,5 @@ i.left {
   font-size: 20px;
   }
 }
+
 
