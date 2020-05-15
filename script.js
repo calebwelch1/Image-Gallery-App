@@ -1,12 +1,8 @@
-
 $(document).ready(function () {
   $(".dropdown-trigger").dropdown();
 
-  $('.sidenav').sidenav();
+  $(".sidenav").sidenav();
 });
-
-
-
 
 // modal open...
 $("img").on("click", (e) => {});
@@ -19,7 +15,6 @@ function clickimage() {
   var imageurl = imageDivThatwasclicked.children("div img").attr("src");
   $("#modal1 img").attr("src", imageurl);
 }
-
 
 // making grid dynamic
 // iterate over response images
@@ -38,7 +33,7 @@ $(document).ready(() => {
   $(document).on("click", ".item", clickimage);
   $(".modal").modal();
 
-  let search = "popular";
+  let search = "most popular";
   var apiKey = "HW9N_DcouND3LdAQFb-NUM_s-4BDQtFZ4R7_JANDOaM";
   randomPage = Math.round(Math.random() * 27);
   var url = `https://api.unsplash.com/search/photos/?page=${randomPage}&client_id=${apiKey}&query=${search}`;
@@ -60,13 +55,14 @@ $(document).ready(() => {
     }
   }
   makePopularGrid();
+
   //find a way to get more than 10 responses
 });
 // Giphy onREADY
 $(document).ready(() => {
   let giphSearch = "popular";
   var api_key = "s02hiQd6APdDVB10fdIxKJXAYvwQQ233";
-  var queryURL = `https://api.giphy.com/v1/gifs/trending?api_key=${api_key}&limit=10`;
+  var queryURL = `https://api.giphy.com/v1/gifs/trending?api_key=${api_key}&limit=15`;
   function makeGiphyGrid() {
     for (let i = 0; i < 10; i++) {
       $.get(queryURL).then((response) => {
