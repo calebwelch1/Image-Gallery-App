@@ -17,8 +17,7 @@
     <!--Google Fonts Link-->
     <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
     <!--Link to project CSS-->
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css" />
 
     <title>GSSC Gallery</title>
 
@@ -32,30 +31,53 @@
       <li><a href="#!">Cars</a></li>
     </ul>
 
+    <!--Modal Container-->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <button><i class="small material-icons">favorite_border</i></button>
+        <img src="" />
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+          >close</a
+        >
+      </div>
+    </div>
+
     <!-- </nav> -->
     <nav>
       <div class="nav-wrapper">
+
         <a id="brandLogo" href="index.html" class="brand-logo center"><i class="large material-icons">camera_roll</i>GSSC Gallery</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
 
         <!--left side links on navbar-->
         <ul class="left hide-on-med-and-down">
           <li><a href="index.html">Home</a></li>
-          <li>  <!-- Dropdown Trigger -->
-            <a class="dropdown-trigger" href="#!" data-target="dropdown1">Genres<i class="material-icons right">arrow_drop_down</i></a>
+          <li>
+            <!-- Dropdown Trigger -->
+            <a class="dropdown-trigger" href="#!" data-target="dropdown1"
+              >Genres<i class="material-icons right">arrow_drop_down</i></a
+            >
           </li>
         </ul>
 
         <!--right side search on navbar-->
         <ul class="right hide-on-med-and-down">
-          <a class="waves-light btn-small" id="searchButton"><i class="material-icons center">search</i></a>
+          <a class="waves-light btn-small" id="searchButton"
+            ><i class="material-icons center">search</i></a
+          >
           <li class="searchLabel">
-            <input type="text" placeholder="Search" id="search"/>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">search</i></a>
+            <input type="text" placeholder="Search" id="search" />
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+              ><i class="material-icons">search</i></a
+            >
           </li>
-        </ul>    
+        </ul>
       </div>
     </nav>
+
   <!--end navbar-->
 
   <!--sidenav for mobile-->
@@ -77,6 +99,7 @@
     </div>
 
     <!-- Compiled and minified JavaScript -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     
     <!--JS links-->
@@ -86,6 +109,7 @@
       crossorigin="anonymous"></script>
     <script src="Unsplashscript.js"></script>
     <script src="GIPHYscript.js"></script>
+
     <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>

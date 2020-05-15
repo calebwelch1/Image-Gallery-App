@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
   $(".dropdown-trigger").dropdown();
 
@@ -10,23 +11,49 @@ $(document).ready(function () {
 // modal open...
 $("img").on("click", (e) => {});
 
+//$(document).ready(function () {});
+
+// Dynamic Imaged in modal ...
+function clickimage() {
+  var imageDivThatwasclicked = $(this);
+  var imageurl = imageDivThatwasclicked.children("div img").attr("src");
+  $("#modal1 img").attr("src", imageurl);
+}
+
+
 // making grid dynamic
 // iterate over response images
 // $("#list").append(newItem.append(newImage));
 
 // loads on ready
-
+function clearPhotoGrid() {
+  $("#list").html("");
+}
+//unsplash onREADY
 $(document).ready(() => {
+  // Dropdown , SideNavBar, Modal Pop-Up
+  $(".dropdown-trigger").dropdown();
+  $(".sidenav").sidenav();
+
+  $(document).on("click", ".item", clickimage);
+  $(".modal").modal();
+
   let search = "popular";
   var apiKey = "HW9N_DcouND3LdAQFb-NUM_s-4BDQtFZ4R7_JANDOaM";
-  var url = `https://api.unsplash.com/search/photos/?page=5&client_id=${apiKey}&query=${search}`;
+  randomPage = Math.round(Math.random() * 27);
+  var url = `https://api.unsplash.com/search/photos/?page=${randomPage}&client_id=${apiKey}&query=${search}`;
   // only gives 10 responses so can only run 10 times then we have to run this entire code again for another 10
   function makePopularGrid() {
     for (let i = 0; i < 10; i++) {
       $.get(url).then((response) => {
         // make new image at [i], make new div. append image to div. append div to list
+
         randomHeight = Math.round(Math.random() * (20 - 8) + 8);
-        newItem = $("<div>", { class: "item", height: `${randomHeight}em` });
+        newItem = $("<div>", {
+          class: "item modal-trigger",
+          height: `${randomHeight}em`,
+          "data-target": "modal1",
+        });
         newImage = $("<img>", { src: response.results[i].urls.regular });
         $("#list").append(newItem.append(newImage));
       });
@@ -35,6 +62,29 @@ $(document).ready(() => {
   makePopularGrid();
   //find a way to get more than 10 responses
 });
+// Giphy onREADY
+$(document).ready(() => {
+  let giphSearch = "popular";
+  var api_key = "s02hiQd6APdDVB10fdIxKJXAYvwQQ233";
+  var queryURL = `https://api.giphy.com/v1/gifs/trending?api_key=${api_key}&limit=10`;
+  function makeGiphyGrid() {
+    for (let i = 0; i < 10; i++) {
+      $.get(queryURL).then((response) => {
+        //console.log(response);
+        randomHeight = Math.round(Math.random() * (20 - 8) + 8);
+        newItem = $("<div>", {
+          class: "item modal-trigger",
+          height: `${randomHeight}em`,
+          "data-target": "modal1",
+        });
+        newGiph = $("<img>", { src: response.data[i].images.original.url });
+        $("#list").append(newItem.append(newGiph));
+      });
+    }
+  }
+  makeGiphyGrid();
+});
+
 //search button...
 $("#searchButton").on("click", (e) => {
   e.preventDefault();
@@ -46,29 +96,44 @@ $("#searchButton").on("click", (e) => {
     $.get(url).then((response) => {
       // make new image at [i], make new div. append image to div. append div to list
       randomHeight = Math.round(Math.random() * (20 - 8) + 8);
-      newItem = $("<div>", { class: "item", height: `${randomHeight}em` });
+      newItem = $("<div>", {
+        class: "item modal-trigger",
+        height: `${randomHeight}em`,
+        "data-target": "modal1",
+      });
       newImage = $("<img>", { src: response.results[i].urls.regular });
       $("#list").append(newItem.append(newImage));
     });
   }
 });
+//search giphs
+$("#searchButton").on("click", (e) => {
+  clearPhotoGrid();
+  let giphSearch = $("#search").val();
+  var api_key = "s02hiQd6APdDVB10fdIxKJXAYvwQQ233";
+  var queryURL = `https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${giphSearch}&limit=10`;
+  function makeGiphyGrid() {
+    for (let i = 0; i < 10; i++) {
+      $.get(queryURL).then((response) => {
+        randomHeight = Math.round(Math.random() * (20 - 8) + 8);
+        newItem = $("<div>", {
+          class: "item modal-trigger",
+          height: `${randomHeight}em`,
+          "data-target": "modal1",
+        });
+        newGiph = $("<img>", {
+          src: response.data[i].images.original.url,
+        });
+        $("#list").append(newItem.append(newGiph));
+      });
+    }
+  }
 
-// $("#searchButtonMobile").on("click", (e) => {
-//   e.preventDefault();
-//   let search = $("#search-mobile").val();
-//   var apiKey = "HW9N_DcouND3LdAQFb-NUM_s-4BDQtFZ4R7_JANDOaM";
-//   var url = `https://api.unsplash.com/search/photos/?page=5&client_id=${apiKey}&query=${search}`;
-//   // only gives 10 responses so can only run 10 times then we have to run this entire code again for another 10
-//   for (let i = 0; i < 10; i++) {
-//     $.get(url).then((response) => {
-//       // make new image at [i], make new div. append image to div. append div to list
-//       randomHeight = Math.round(Math.random() * (20 - 8) + 8);
-//       newItem = $("<div>", { class: "item", height: `${randomHeight}em` });
-//       newImage = $("<img>", { src: response.results[i].urls.regular });
-//       $("#list").append(newItem.append(newImage));
-//     });
-//   }
-// });
+  makeGiphyGrid();
+});
+
+// now to make the same thing but for giphy!
+
 // //PseudoCode
 // FEATURES:
 // 1 Main page with several photos.
