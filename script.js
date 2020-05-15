@@ -1,3 +1,16 @@
+
+$(document).ready(function () {
+  $(".dropdown-trigger").dropdown();
+
+  $('.sidenav').sidenav();
+});
+
+
+
+
+// modal open...
+$("img").on("click", (e) => {});
+
 //$(document).ready(function () {});
 
 // Dynamic Imaged in modal ...
@@ -6,6 +19,7 @@ function clickimage() {
   var imageurl = imageDivThatwasclicked.children("div img").attr("src");
   $("#modal1 img").attr("src", imageurl);
 }
+
 
 // making grid dynamic
 // iterate over response images

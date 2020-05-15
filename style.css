@@ -1,3 +1,10 @@
+a {
+  color: white;
+  font-family: "Megrim", cursive;
+  font-weight: bold;
+}
+
+
 img {
   border-radius: 20px;
   overflow: hidden;
@@ -49,16 +56,29 @@ input {
 
 i.large.material-icons {
   font-size: 3rem;
+}
 
-.image {
+/* .image {
   width: 600px;
   height: 300px;
-}
+} */
 
 .container {
   position: relative;
   /* size of each image on grid */
   width: 100%;
+}
+
+input#search {
+  font-family: "Megrim", cursive;
+  font-weight: bold;
+  
+}
+
+input#search-mobile {
+  font-family: "Megrim", cursive;
+  font-weight: bold;
+e
 }
 
 .overlay {
@@ -89,17 +109,15 @@ i.large.material-icons {
   text-align: center;
 }
 body {
-  background-color: black;
+  background-color: lightgray;
 }
 
 a.dropdown-trigger {
-  color: black;
+  color: white;
   font-family: "Megrim", cursive;
+  font-weight: bold;
 }
 
-.search-mobile {
-  width: 70%;
-}
 
 .sidenav {
   background-color: black;
@@ -108,3 +126,16 @@ a.dropdown-trigger {
 i.left {
   margin-right: 5px;
 }
+
+@media screen and (max-width: 818px) {
+  a#brandLogo {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 600px){
+  a#brandLogo {
+  font-size: 20px;
+  }
+}
+
